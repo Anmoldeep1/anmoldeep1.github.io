@@ -2,9 +2,9 @@
   "swagger": "2.0",
   "info": {
     "version": "v1",
-    "title": "SailCMR"
+    "title": "SailCMR Canada"
   },
-  "host": "localhost:10943",
+  "host": "https://mvctech-api-uat.azurewebsites.net",
   "schemes": [
     "http"
   ],
@@ -474,130 +474,12 @@
         }
       }
     },
-    "/api/Clinics/AddUpdateStages": {
-      "post": {
-        "tags": [
-          "Clinics"
-        ],
-        "operationId": "Clinics_AddUpdateStages",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/MVC_API.SharedClasses.ClinicPatientStages"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/MVC_API.SharedClasses.Code_Message_Response"
-            }
-          }
-        }
-      }
-    },
-    "/api/Clinics/GetClinicStages/{ClinicName}/{Show}": {
-      "get": {
-        "tags": [
-          "Clinics"
-        ],
-        "operationId": "Clinics_GetClinicStages",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml"
-        ],
-        "parameters": [
-          {
-            "name": "ClinicName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "Show",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/MVC_API.SharedClasses.ClinicPatientStages"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Clinics/AddUpdatePatientStage": {
-      "post": {
-        "tags": [
-          "Clinics"
-        ],
-        "operationId": "Clinics_AddUpdatePatientStage",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/MVC_API.SharedClasses.PatientStage"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/MVC_API.SharedClasses.Code_Message_Response"
-            }
-          }
-        }
-      }
-    },
     "/api/Clinics/GetAllMVCReports/{role}": {
       "get": {
         "tags": [
           "Clinics"
         ],
-        "operationId": "Clinics_GetAllMVCReports0",
+        "operationId": "Clinics_GetAllMVCReports",
         "consumes": [],
         "produces": [
           "application/json",
@@ -631,7 +513,7 @@
         "tags": [
           "Clinics"
         ],
-        "operationId": "Clinics_GetAllMVCReports",
+        "operationId": "Clinics_GetAllMVCReports1",
         "consumes": [],
         "produces": [
           "application/json",
@@ -823,7 +705,7 @@
         "tags": [
           "Clinics"
         ],
-        "operationId": "Clinics_GetTelemedAvailable0",
+        "operationId": "Clinics_GetTelemedAvailable",
         "consumes": [],
         "produces": [
           "application/json",
@@ -858,7 +740,7 @@
         "tags": [
           "Clinics"
         ],
-        "operationId": "Clinics_GetTelemedAvailable",
+        "operationId": "Clinics_GetTelemedAvailable0",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1752,7 +1634,6 @@
         ],
         "operationId": "LicenseProducers_DeleteLPProduct",
         "consumes": [],
-        "description": "Delete a License Producer Product",
         "produces": [
           "application/json",
           "text/json",
@@ -1765,8 +1646,7 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32",
-            "description": "Product ID"
+            "format": "int32"
           }
         ],
         "responses": {
@@ -1978,7 +1858,7 @@
         "tags": [
           "LicenseProducers"
         ],
-        "operationId": "LicenseProducers_UpdateLP0",
+        "operationId": "LicenseProducers_UpdateLP",
         "consumes": [
           "application/json",
           "text/json",
@@ -2056,7 +1936,7 @@
         "tags": [
           "LicenseProducers"
         ],
-        "operationId": "LicenseProducers_UpdateLP",
+        "operationId": "LicenseProducers_UpdateLP0",
         "consumes": [
           "application/json",
           "text/json",
@@ -2625,7 +2505,7 @@
         "tags": [
           "MvcAdmin"
         ],
-        "operationId": "MvcAdmin_GetSuperAdminsList0",
+        "operationId": "MvcAdmin_GetSuperAdminsList",
         "consumes": [],
         "produces": [
           "application/json",
@@ -3197,7 +3077,7 @@
         "tags": [
           "MvcAdmin"
         ],
-        "operationId": "MvcAdmin_GetSuperAdminsList",
+        "operationId": "MvcAdmin_GetSuperAdminsList0",
         "consumes": [],
         "produces": [
           "application/json",
@@ -6087,6 +5967,48 @@
         }
       }
     },
+    "/api/Providers/GetProvidersClinicsByLoggedInProvider/{Provider_ID}/{LoggedIn_ProviderID}": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "operationId": "Providers_GetProvidersClinicsByLoggedInProvider",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Provider_ID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "LoggedIn_ProviderID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MVC_API.Provider.ClinicList"
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Providers/RequestAdditionalDocuments": {
       "post": {
         "tags": [
@@ -7727,37 +7649,6 @@
         }
       }
     },
-    "/api/User/GetIntakeForm/{Intake_Form_ID}": {
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "operationId": "Users_GetIntakeForm",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml"
-        ],
-        "parameters": [
-          {
-            "name": "Intake_Form_ID",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/MVC_API.SharedClasses.GET_Patient_Intake_Form"
-            }
-          }
-        }
-      }
-    },
     "/api/User/GetConsultationRequests/{User_Role}/{MVC_User_Id}/{ClinicID}/{Status_Id}": {
       "get": {
         "tags": [
@@ -9270,6 +9161,38 @@
             "description": "OK",
             "schema": {
               "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/api/User/GetVirtualAppointmentStatus/{Appt_Id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "Users_GetVirtualAppointmentStatus",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Appt_Id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "boolean"
             }
           }
         }
@@ -11557,7 +11480,11 @@
             30,
             31,
             32,
-            33
+            33,
+            34,
+            35,
+            36,
+            37
           ],
           "type": "integer"
         },
@@ -12209,95 +12136,6 @@
         }
       }
     },
-    "MVC_API.SharedClasses.ClinicPatientStages": {
-      "type": "object",
-      "properties": {
-        "Clinic_Stage_ID": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Clinic_ID": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Stage_TXT": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "Created_Date": {
-          "format": "date-time",
-          "type": "string"
-        },
-        "Edited_Date": {
-          "format": "date-time",
-          "type": "string"
-        },
-        "IsDeleted": {
-          "type": "boolean"
-        },
-        "SelectedClinics": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MVC_API.Clinic.Clinics"
-          }
-        }
-      }
-    },
-    "MVC_API.SharedClasses.Code_Message_Response": {
-      "type": "object",
-      "properties": {
-        "Response_Code": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Response_Msg": {
-          "type": "string"
-        },
-        "Payment_Id": {
-          "type": "string"
-        },
-        "Merchant_Ref_Num": {
-          "type": "string"
-        }
-      }
-    },
-    "MVC_API.SharedClasses.PatientStage": {
-      "type": "object",
-      "properties": {
-        "Patient_Stage_ID": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Patient_ID": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Clinic_ID": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Provider_ID": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Stage_ID": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Stage_TXT": {
-          "type": "string"
-        },
-        "Assigned_Date": {
-          "format": "date-time",
-          "type": "string"
-        },
-        "IsActive": {
-          "type": "boolean"
-        }
-      }
-    },
     "MVC_API.Clinic.MVCReports": {
       "type": "object",
       "properties": {
@@ -12578,6 +12416,24 @@
         }
       }
     },
+    "MVC_API.SharedClasses.Code_Message_Response": {
+      "type": "object",
+      "properties": {
+        "Response_Code": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Response_Msg": {
+          "type": "string"
+        },
+        "Payment_Id": {
+          "type": "string"
+        },
+        "Merchant_Ref_Num": {
+          "type": "string"
+        }
+      }
+    },
     "MVC_API.SharedClasses.ReferredByType": {
       "type": "object",
       "properties": {
@@ -12644,8 +12500,11 @@
           "type": "string"
         },
         "Clinic_Id": {
-          "format": "int32",
-          "type": "integer"
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          }
         },
         "User_Role": {
           "type": "string"
@@ -14184,12 +14043,6 @@
         "Patient_Last_Name": {
           "type": "string"
         },
-        "LP_First_Name": {
-          "type": "string"
-        },
-        "LP_Last_Name": {
-          "type": "string"
-        },
         "LP_Store_Name": {
           "type": "string"
         },
@@ -14950,7 +14803,11 @@
             30,
             31,
             32,
-            33
+            33,
+            34,
+            35,
+            36,
+            37
           ],
           "type": "integer"
         },
@@ -15289,6 +15146,41 @@
         },
         "DOB": {
           "type": "string"
+        }
+      }
+    },
+    "MVC_API.SharedClasses.PatientStage": {
+      "type": "object",
+      "properties": {
+        "Patient_Stage_ID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Patient_ID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Clinic_ID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Provider_ID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Stage_ID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Stage_TXT": {
+          "type": "string"
+        },
+        "Assigned_Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "IsActive": {
+          "type": "boolean"
         }
       }
     },
@@ -16447,6 +16339,12 @@
         },
         "IsRequest": {
           "type": "boolean"
+        },
+        "ProfileTimeline": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MVC_API.SharedClasses.PatientProfileTimeline"
+          }
         }
       }
     },
@@ -16533,6 +16431,22 @@
         },
         "IsPast": {
           "type": "boolean"
+        }
+      }
+    },
+    "MVC_API.SharedClasses.PatientProfileTimeline": {
+      "type": "object",
+      "properties": {
+        "ClinicId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ProviderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Activity": {
+          "type": "string"
         }
       }
     },
@@ -18418,6 +18332,18 @@
         }
       }
     },
+    "MVC_API.Provider.ClinicList": {
+      "type": "object",
+      "properties": {
+        "Clinic_ID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Clinic_Name": {
+          "type": "string"
+        }
+      }
+    },
     "MVC_API.Provider.Provider_Additional_Info_Request": {
       "type": "object",
       "properties": {
@@ -19703,49 +19629,6 @@
           "type": "string"
         },
         "Password": {
-          "type": "string"
-        }
-      }
-    },
-    "MVC_API.SharedClasses.GET_Patient_Intake_Form": {
-      "type": "object",
-      "properties": {
-        "intake_form": {
-          "$ref": "#/definitions/MVC_API.Patient.Intake_Form"
-        },
-        "patient_info": {
-          "$ref": "#/definitions/MVC_API.SharedClasses.Patient_Intake_Info"
-        }
-      }
-    },
-    "MVC_API.SharedClasses.Patient_Intake_Info": {
-      "type": "object",
-      "properties": {
-        "First_Name": {
-          "type": "string"
-        },
-        "Last_Name": {
-          "type": "string"
-        },
-        "Height": {
-          "type": "string"
-        },
-        "Weight": {
-          "type": "string"
-        },
-        "Gender": {
-          "type": "string"
-        },
-        "Home_Phone": {
-          "type": "string"
-        },
-        "Cell_Phone": {
-          "type": "string"
-        },
-        "Work_Phone": {
-          "type": "string"
-        },
-        "Email_Address": {
           "type": "string"
         }
       }
