@@ -6,7 +6,7 @@
   },
   "host": "mvctech-api-uat.azurewebsites.net/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api/Admin/DeleteUser/{User_Name}": {
